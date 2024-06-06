@@ -180,3 +180,27 @@ export function X() {
 		</svg>
 	);
 }
+
+export function HamburgerIcon() {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			version="1.1"
+			width="24"
+			height="24"
+			x="0"
+			y="0"
+			viewBox="0 0 32 32"
+			xmlSpace="preserve"
+		>
+			<g>
+				<path
+					d="M29 8H3a2 2 0 0 1 0-4h26a2 2 0 0 1 0 4zM29 28H3a2 2 0 0 1 0-4h26a2 2 0 0 1 0 4zM29 18H3a2 2 0 0 1 0-4h26a2 2 0 0 1 0 4z"
+					fill="#000000"
+					opacity="1"
+					data-original="#000000"
+				></path>
+			</g>
+		</svg>
+	);
+}

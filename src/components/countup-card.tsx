@@ -29,12 +29,12 @@ export function CountUpCard({ icon: Icon, end, label }) {
 
 	return (
 		<motion.div
-			className="flex flex-col items-center"
+			className="flex flex-col items-center "
 			initial="hidden"
 			animate={controls}
 		>
 			<Icon className="h-10 w-10 mx-auto mb-2 text-primary" />
-			<h3 className="text-3xl font-bold text-gray-800">
+			<h3 className="text-xl md:text-3xl font-bold text-gray-800">
 				{Math.ceil(count).toLocaleString()} +
 			</h3>
 			<p className="text-gray-600">{label}</p>
