@@ -20,8 +20,8 @@ const cardVariants = {
 
 const FeaturesSection = () => {
 	return (
-		<section className="container mx-auto px-6 py-16">
-			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-12">
+		<section className="container mx-auto px-6 ">
+			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-8">
 				Why sell your house with Tru?
 			</h2>
 			<div className="grid grid-cols-3 gap-8">

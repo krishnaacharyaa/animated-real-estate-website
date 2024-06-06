@@ -12,6 +12,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { CountUpCard } from './components/countup-card';
 import FeaturesSection from './pages/features';
+import SellHomeSection from './pages/sell-home';
 
 // Define animation variants
 const containerVariants = {
@@ -50,7 +51,7 @@ const rightItemVariants = {
 
 export default function App() {
 	return (
-		<div>
+		<div className="w-full ">
 			<div className="bg-bgColor ">
 				<nav className="container  px-6 py-4 flex justify-between items-center">
 					<div className="flex items-center">
@@ -135,7 +136,10 @@ export default function App() {
 					</motion.div>
 				</motion.div>
 			</div>
-			<FeaturesSection />
+			<div className="flex my-6 flex-col gap-6 w-full ">
+				<FeaturesSection />
+				<SellHomeSection />
+			</div>
 		</div>
 	);
 }
