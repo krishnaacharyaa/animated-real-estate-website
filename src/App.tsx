@@ -14,6 +14,7 @@ import { CountUpCard } from './components/countup-card';
 import FeaturesSection from './sections/features';
 import SellHomeSection from './sections/sell-home';
 import { PropertiesList } from './sections/properties';
+import { CaculatePriceSection } from './sections/calculate-price';
 
 // Define animation variants
 const containerVariants = {
@@ -141,6 +142,7 @@ export default function App() {
 				<PropertiesList />
 				<FeaturesSection />
 				<SellHomeSection />
+				<CaculatePriceSection />
 			</div>
 		</div>
 	);
