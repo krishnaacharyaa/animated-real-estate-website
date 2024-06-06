@@ -67,7 +67,7 @@ export function CaculatePriceSection() {
 				className="h-80 flex-1 object-cover"
 			>
 				<img
-					className="h-80 w-full"
+					className="h-80 w-full object-cover"
 					src="https://purplebricks-web.imgix.net/web-images/marketing-global/uk/savings-calculator/saving_calculator_2022.jpg?h=435&auto=format"
 					alt=""
 				/>

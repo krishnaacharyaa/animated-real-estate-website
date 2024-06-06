@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const SellHomeSection = () => {
 	return (
-		<div className=" w-full  py-6 bg-gray-100">
-			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-4">
+		<div className=" w-full  py-12 bg-bgColor ">
+			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-8">
 				Ready to sell your home for free?
 			</h2>
 			<div className="flex justify-center items-center w-1/2 mx-auto">

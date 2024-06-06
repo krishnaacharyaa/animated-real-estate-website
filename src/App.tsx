@@ -15,6 +15,7 @@ import FeaturesSection from './sections/features';
 import SellHomeSection from './sections/sell-home';
 import { PropertiesList } from './sections/properties';
 import { CaculatePriceSection } from './sections/calculate-price';
+import { InfiniteMovingCardsDemo, Testimonial } from './sections/testimonial';
 
 // Define animation variants
 const containerVariants = {
@@ -143,6 +144,7 @@ export default function App() {
 				<FeaturesSection />
 				<SellHomeSection />
 				<CaculatePriceSection />
+				<Testimonial />
 			</div>
 		</div>
 	);
