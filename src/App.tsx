@@ -11,8 +11,9 @@ import {
 import './App.css';
 import { useEffect, useState } from 'react';
 import { CountUpCard } from './components/countup-card';
-import FeaturesSection from './pages/features';
-import SellHomeSection from './pages/sell-home';
+import FeaturesSection from './sections/features';
+import SellHomeSection from './sections/sell-home';
+import { PropertiesList } from './sections/properties';
 
 // Define animation variants
 const containerVariants = {
@@ -137,6 +138,7 @@ export default function App() {
 				</motion.div>
 			</div>
 			<div className="flex my-6 flex-col gap-6 w-full ">
+				<PropertiesList />
 				<FeaturesSection />
 				<SellHomeSection />
 			</div>
