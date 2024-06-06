@@ -1,5 +1,5 @@
 import './App.css';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -9,6 +9,7 @@ import {
 	MicroscopeIcon,
 } from '@/icons/landing-page-icons';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 // Define animation variants
 const containerVariants = {
@@ -103,21 +104,9 @@ export default function App() {
 						className="mt-8 grid grid-cols-3 gap-8 text-center"
 						variants={leftItemVariants}
 					>
-						<div>
-							<BuildingIcon className="h-10 w-10 mx-auto mb-2 text-primary" />
-							<h3 className="text-3xl font-bold text-gray-800">200+</h3>
-							<p className="text-gray-600">Apartments</p>
-						</div>
-						<div>
-							<UsersIcon className="h-10 w-10 mx-auto mb-2 text-primary" />
-							<h3 className="text-3xl font-bold text-gray-800">10K+</h3>
-							<p className="text-gray-600">Customers</p>
-						</div>
-						<div>
-							<ThumbsUpIcon className="h-10 w-10 mx-auto mb-2 text-primary" />
-							<h3 className="text-3xl font-bold text-gray-800">100+</h3>
-							<p className="text-gray-600">Good reviews</p>
-						</div>
+						<CountUpCard icon={BuildingIcon} end={1500} label="Apartments" />
+						<CountUpCard icon={UsersIcon} end={1000} label="Customers" />
+						<CountUpCard icon={ThumbsUpIcon} end={2500} label="Good reviews" />
 					</motion.div>
 				</motion.div>
 				<motion.div
@@ -132,5 +121,46 @@ export default function App() {
 				</motion.div>
 			</motion.div>
 		</div>
+	);
+}
+
+function CountUpCard({ icon: Icon, end, label }) {
+	const [count, setCount] = useState(0);
+	const controls = useAnimation();
+
+	useEffect(() => {
+		controls.start('visible');
+	}, [controls]);
+
+	useEffect(() => {
+		const duration = 1500; // Duration in milliseconds
+		const increment = end / (duration / 10); // Increment amount per interval
+
+		const interval = setInterval(() => {
+			setCount(prevCount => {
+				const nextCount = prevCount + increment;
+				if (nextCount >= end) {
+					clearInterval(interval);
+					return end;
+				}
+				return nextCount;
+			});
+		}, 10);
+
+		return () => clearInterval(interval);
+	}, [end]);
+
+	return (
+		<motion.div
+			className="flex flex-col items-center"
+			initial="hidden"
+			animate={controls}
+		>
+			<Icon className="h-10 w-10 mx-auto mb-2 text-primary" />
+			<h3 className="text-3xl font-bold text-gray-800">
+				{Math.ceil(count).toLocaleString()} +
+			</h3>
+			<p className="text-gray-600">{label}</p>
+		</motion.div>
 	);
 }
