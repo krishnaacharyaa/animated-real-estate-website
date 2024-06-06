@@ -48,8 +48,8 @@ const rightItemVariants = {
 
 export default function App() {
 	return (
-		<div className="bg-bgColor">
-			<nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+		<div className="bg-bgColor ">
+			<nav className="container  px-6 py-4 flex justify-between items-center">
 				<div className="flex items-center">
 					<BuildingIcon className="text-primary h-8 w-8" />
 					<span className="ml-3 text-xl font-bold uppercase tracking-widest text-gray-800">
@@ -75,12 +75,12 @@ export default function App() {
 				</Button>
 			</nav>
 			<motion.div
-				className="container mx-auto px-6 py-16 flex flex-col lg:flex-row justify-between items-center"
+				className="container gap-4 px-6 py-16 flex flex-col lg:flex-row justify-between items-center"
 				initial="hidden"
 				animate="visible"
 				variants={containerVariants}
 			>
-				<motion.div className="lg:w-1/2 mr-4" variants={leftItemVariants}>
+				<motion.div className="w-1/2 mr-4" variants={leftItemVariants}>
 					<h1 className="text-5xl font-bold text-gray-800 mb-6">
 						Explore Some Of The Best Properties In Your Area
 					</h1>
@@ -110,7 +110,7 @@ export default function App() {
 					</motion.div>
 				</motion.div>
 				<motion.div
-					className="lg:w-1/2 mt-8 lg:mt-0"
+					className="w-1/2 mt-8 flex justify-end lg:mt-0"
 					variants={rightItemVariants}
 				>
 					<img
