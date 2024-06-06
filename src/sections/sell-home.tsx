@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 const SellHomeSection = () => {
 	return (
-		<div className=" w-full  py-12 bg-bgColor ">
+		<div className=" w-full  py-12 bg-bgColor px-4">
 			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-8">
 				Ready to sell your home for free?
 			</h2>
-			<div className="flex justify-center items-center w-1/2 mx-auto">
+			<div className="flex justify-center items-center md:w-1/2 mx-auto">
 				<Input
 					type="text"
 					placeholder="Enter your postcode"

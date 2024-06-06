@@ -30,12 +30,12 @@ export function CaculatePriceSection() {
 		},
 	};
 	return (
-		<div className="flex mx-36 gap-8 justify-between">
+		<div className="flex flex-col md:flex-row mx-4 md:mx-36 gap-8 justify-between">
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
 				variants={leftItemVariants}
-				className="w-3/6 shadow-md p-8"
+				className="w-full md:w-3/6 shadow-md p-8"
 			>
 				<h2 className="text-3xl mx-auto w-full font-semibold text-gray-800 mb-4">
 					You could save <br></br>

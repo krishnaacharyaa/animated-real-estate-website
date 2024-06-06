@@ -1,30 +1,14 @@
-// components/WhySellWithTru.js
-
-import { delay, motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-
-const cardVariants = {
-	hidden: { opacity: 0.6, scale: 0.5 },
-	animate: (index: number) => ({
-		// opacity: 1,
-		// scale: 1,
-		transition: {
-			// type: 'spring',
-			// stiffness: 260,
-			// damping: 20,
-			delay: 0.5 * index,
-		},
-	}),
-};
+import { Button } from '@/components/ui/button';
 
 const FeaturesSection = () => {
 	return (
-		<section className="container mx-auto px-6 ">
+		<section className="container mx-auto px-6 py-8">
 			<h2 className="text-3xl mx-auto w-full text-center font-bold text-gray-800 mb-8">
 				Why sell your house with Tru?
 			</h2>
-			<div className="grid grid-cols-3 gap-8">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<AnimatedCard
 					index={1}
 					imageSrc="https://purplebricks-web.imgix.net/marketing-global/uk/proposition-tiles/dedicated-local-experts-2021.jpg?w=768&auto=format&q=50&ar=407%3A226&fit=crop&ixlib=react-9.2.0"
@@ -68,10 +52,6 @@ const AnimatedCard = ({ index, imageSrc, heading, details, buttonText }) => {
 				opacity: opacityProgress,
 			}}
 			key={index}
-			// variants={cardVariants}
-			// initial="hidden"
-			// whileInView="animate"
-			// custom={index}
 			viewport={{ once: true }}
 		>
 			<img src={imageSrc} alt="Card" className="w-full h-60 object-cover" />

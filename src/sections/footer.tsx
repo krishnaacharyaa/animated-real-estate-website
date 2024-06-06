@@ -5,8 +5,7 @@ const Footer = () => {
 	return (
 		<footer className="bg-gray-900 text-gray-300 ">
 			<div className="container mx-auto px-4 py-8 md:py-16 flex flex-wrap justify-between">
-				{/* Section 1 */}
-				<div className="w-full sm:w-1/2 md:w-auto mb-8 md:mb-0">
+				<div className="w-1/2 md:w-auto mb-8 md:mb-0">
 					<h3 className="text-lg font-semibold mb-4">SALES & LETTINGS</h3>
 					<ul>
 						<li>Sell a property</li>
@@ -18,8 +17,7 @@ const Footer = () => {
 						<li>Download the app</li>
 					</ul>
 				</div>
-				{/* Section 2 */}
-				<div className="w-full sm:w-1/2 md:w-auto mb-8 md:mb-0">
+				<div className="w-1/2 md:w-auto mb-8 md:mb-0">
 					<h3 className="text-lg font-semibold mb-4">HELP & CONTACT</h3>
 					<ul>
 						<li>Contact us</li>
@@ -29,8 +27,7 @@ const Footer = () => {
 						<li>Privacy</li>
 					</ul>
 				</div>
-				{/* Section 3 */}
-				<div className="w-full sm:w-1/2 md:w-auto mb-8 md:mb-0">
+				<div className="w-1/2 md:w-auto mb-8 md:mb-0">
 					<h3 className="text-lg font-semibold mb-4">USEFUL LINKS</h3>
 					<ul>
 						<li>Meet our experts</li>
@@ -42,7 +39,7 @@ const Footer = () => {
 					</ul>
 				</div>
 				{/* Section 4 */}
-				<div className="w-full sm:w-1/2 md:w-auto">
+				<div className="w-1/2 md:w-auto">
 					<h3 className="text-lg font-semibold mb-4">FOLLOW US ON</h3>
 					<div className="flex space-x-4">
 						<Whatsapp />
