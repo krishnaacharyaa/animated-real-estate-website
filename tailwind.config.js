@@ -18,15 +18,19 @@ module.exports = {
     },
     extend: {
       colors: {
+        primary: '#6b46c1',        // Purple shade for primary
+        accent: '#9f7aea',         // Lighter purple shade for accent
+        accentHover: '#805ad5',    // Darker purple shade for accent hover
+        bgColor: '#f3e8ff',        // Very light purple for background
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
+        // primary: {
+        //   DEFAULT: "hsl(var(--primary))",
+        //   foreground: "hsl(var(--primary-foreground))",
+        // },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -39,10 +43,10 @@ module.exports = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
+        // accent: {
+        //   DEFAULT: "hsl(var(--accent))",
+        //   foreground: "hsl(var(--accent-foreground))",
+        // },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
