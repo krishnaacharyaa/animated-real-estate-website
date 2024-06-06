@@ -1,6 +1,6 @@
 // components/WhySellWithTru.js
 
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useRef } from 'react';
 
@@ -53,12 +53,19 @@ const AnimatedCard = ({ imageSrc, heading, details, buttonText }) => {
 		target: ref,
 		offset: ['0 1', '1.33 1'],
 	});
+	const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+	const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 	return (
 		<motion.div
+			ref={ref}
 			className="bg-white rounded-lg overflow-hidden shadow-lg"
-			variants={cardVariants}
-			initial="hidden"
-			whileInView="visible"
+			style={{
+				scale: scaleProgress,
+				opacity: scrollYProgress,
+			}}
+			// variants={cardVariants}
+			// initial="hidden"
+			// whileInView="visible"
 			// viewport={{ once: true, amount: 0.2 }}
 		>
 			<img src={imageSrc} alt="Card" className="w-full h-60 object-cover" />
