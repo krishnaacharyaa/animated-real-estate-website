@@ -1,0 +1,132 @@
+[
+	{
+		"title": "Spacious Apartment in Downtown",
+		"price": 1500,
+		"images": [
+			"https://framerusercontent.com/images/ogbmw8amuGTcXhUz7EMeguTj1M.webp?scale-down-to=512",
+			"https://framerusercontent.com/images/TxUBsMONXRW8Zmgf29XgOwyAFBE.webp",
+			"https://framerusercontent.com/images/mK0lZ0IwPXRFFd1zNzmG6OMevNM.webp"
+		],
+		"address": "123 Main St",
+		"city": "New York",
+		"bedroom": 2,
+		"bathroom": 1,
+		"latitude": "40.7128",
+		"longitude": "-74.0060",
+		"type": "rent",
+		"property": "apartment",
+		"postDetail": {
+			"desc": "A beautifully renovated apartment located in the heart of downtown New York. Close to all amenities and public transportation.",
+			"utilities": "Water and electricity included",
+			"pet": "Allowed",
+			"income": "Verification required",
+			"size": 1000,
+			"school": 8,
+			"bus": 5,
+			"restaurant": 10
+		}
+	},
+	{
+		"title": "Cozy Condo with Stunning Views",
+		"price": 250000,
+		"images": [
+			"https://framerusercontent.com/images/bMg91HJevCOwyP5XL8IWnGvE.webp",
+			"image5.jpg",
+			"image6.jpg"
+		],
+		"address": "456 Elm St",
+		"city": "Los Angeles",
+		"bedroom": 1,
+		"bathroom": 1,
+		"latitude": "34.0522",
+		"longitude": "-118.2437",
+		"type": "buy",
+		"property": "condo",
+		"postDetail": {
+			"desc": "Enjoy breathtaking views from this charming condo situated in a prime location. Perfect for first-time buyers or as an investment property.",
+			"utilities": "Not included",
+			"pet": "Not allowed",
+			"income": "N/A",
+			"size": 800,
+			"school": 7,
+			"bus": 10,
+			"restaurant": 5
+		}
+	},
+	{
+		"title": "Luxury Apartment in Historic Building",
+		"price": 3000,
+		"images": [
+			"https://framerusercontent.com/images/M9TEzS8kEaXgoKgQ3VFPk3ipo.webp",
+			"image14.jpg",
+			"image15.jpg"
+		],
+		"address": "202 Walnut St",
+		"city": "Boston",
+		"bedroom": 2,
+		"bathroom": 2,
+		"latitude": "42.3601",
+		"longitude": "-71.0589",
+		"type": "rent",
+		"property": "apartment",
+		"postDetail": {
+			"desc": "Elegant apartment located within a historic building in the heart of Boston. Enjoy modern amenities while embracing the charm of the past.",
+			"utilities": "Included",
+			"pet": "Allowed with restrictions",
+			"income": "Verification required",
+			"size": 1500,
+			"school": 8,
+			"bus": 5,
+			"restaurant": 15
+		}
+	},
+	{
+		"title": "Modern House with Pool",
+		"price": 3500,
+		"images": [
+			"https://framerusercontent.com/images/nVpXLvCjUikE6dq1mgsikOWnRtQ.webp?scale-down-to=512",
+			"image8.jpg",
+			"image9.jpg"
+		],
+		"address": "789 Oak St",
+		"city": "Miami",
+		"bedroom": 3,
+		"bathroom": 2,
+		"latitude": "25.7617",
+		"longitude": "-80.1918",
+		"type": "rent",
+		"property": "house",
+		"postDetail": {
+			"desc": "Stunning modern house with a spacious backyard and swimming pool. Ideal for families looking for a luxurious yet comfortable living space.",
+			"utilities": "Not included",
+			"pet": "Allowed with deposit",
+			"income": "Verification required",
+			"size": 2000,
+			"school": 9,
+			"bus": 15,
+			"restaurant": 20
+		}
+	},
+	{
+		"title": "Vacant Land for Development",
+		"price": 500000,
+		"images": [
+			"https://framerusercontent.com/images/TxUBsMONXRW8Zmgf29XgOwyAFBE.webp",
+			"image11.jpg",
+			"image12.jpg"
+		],
+		"address": "101 Pine St",
+		"city": "Seattle",
+		"latitude": "47.6062",
+		"longitude": "-122.3321",
+		"type": "buy",
+		"property": "land",
+		"postDetail": {
+			"desc": "Rare opportunity to own a prime piece of land in a rapidly developing area. Perfect for investors or developers looking to build their dream project.",
+			"utilities": "Not applicable",
+			"pet": "Not applicable",
+			"income": "Not applicable",
+			"size": 0.5
+		}
+	}
+]
