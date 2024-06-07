@@ -1,7 +1,24 @@
 import ReactDOM from 'react-dom/client';
-import App from './App.js';
+import App from './App';
 import './index.css';
 import ListPage from './pages/list-page.js';
 import SinglePage from './pages/details-page.js';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-ReactDOM.createRoot(document.getElementById('root')).render(<SinglePage />);
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <App />,
+	},
+	{
+		path: '/listings',
+		element: <ListPage />,
+	},
+	{
+		path: '/details',
+		element: <SinglePage />,
+	},
+]);
+ReactDOM.createRoot(document.getElementById('root')).render(
+	<RouterProvider router={router} />
+);
