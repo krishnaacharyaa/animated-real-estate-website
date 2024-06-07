@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Card from './components/list-page/Card';
 import { Filter } from './components/list-page/filter-section';
+import Map from './components/list-page/map/Map';
 
 const containerVariants = {
 	hidden: { opacity: 1 },
@@ -43,7 +44,7 @@ function ListPage() {
 			</div>
 			<div className="w-full lg:w-1/3 h-screen lg:sticky top-0">
 				<Suspense fallback={<p>Loading...</p>}>
-					{/* <Map items={data.postResponse.data} /> */}
+					<Map items={data.postResponse.data} />
 				</Suspense>
 			</div>
 		</div>
