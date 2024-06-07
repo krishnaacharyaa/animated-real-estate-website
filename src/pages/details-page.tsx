@@ -1,6 +1,3 @@
-// Remove this import if the styles are fully converted to Tailwind
-// import Slider from '../../components/slider/Slider';
-// import Map from '../../components/map/Map';
 import {
 	Bath,
 	Bed,
@@ -29,6 +26,7 @@ import {
 } from '@/components/ui/popover';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 function SinglePage() {
 	const post = {
 		title: 'Luxury Apartment in Historic Building',
@@ -61,9 +59,9 @@ function SinglePage() {
 	const [date, setDate] = useState<Date>();
 
 	return (
-		<div className="flex flex-col justify-between mx-32 lg:flex-row h-screen ">
-			<div className="lg:flex-3 h-full overflow-y-scroll lg:overflow-hidden">
-				<div className="p-6 lg:p-10">
+		<div className="flex flex-col lg:flex-row h-screen">
+			<div className="lg:flex-3 lg:overflow-hidden">
+				<div className="p-4 md:p-6 lg:p-10">
 					<Link to="/listings">
 						<div className="underline text-primary mb-4">Go back</div>
 					</Link>
@@ -76,30 +74,30 @@ function SinglePage() {
 									<Pin />
 									<span>{post.address}</span>
 								</div>
-								<div className="mt-4  py-2  rounded-md text-lg">
+								<div className="mt-4 py-2 rounded-md text-lg">
 									{post.postDetail.desc}
 								</div>
 								<div className="drop-shadow-sm rounded-lg bg-bgColor p-4">
-									<div className="flex flex-col ">
+									<div className="flex flex-col">
 										<div className="mb-2">Available for sale</div>
 										<h1 className="text-4xl">$ {post.price}</h1>
-										<hr className="mt-2 bg-black"></hr>
+										<hr className="mt-2 bg-black" />
 										<div>
 											Please fill the following form so one of our agents will
 											be contacting you as soon as possible
 										</div>
-										<div className="flex gap-4 mb-4 mt-4">
-											<Input placeholder="Name"></Input>
-											<Input placeholder="Email address"></Input>
+										<div className="flex flex-col md:flex-row gap-4 mb-4 mt-4">
+											<Input placeholder="Name" />
+											<Input placeholder="Email address" />
 										</div>
-										<div className="flex gap-4">
+										<div className="flex flex-col md:flex-row gap-4">
 											<Input placeholder="Number" />
 											<Popover>
 												<PopoverTrigger asChild>
 													<Button
 														variant={'outline'}
 														className={cn(
-															'w-[280px] justify-start text-left font-normal',
+															'w-full md:w-[280px] justify-start text-left font-normal',
 															!date && 'text-muted-foreground'
 														)}
 													>
@@ -129,8 +127,8 @@ function SinglePage() {
 					</div>
 				</div>
 			</div>
-			<div className="lg:flex-2  bg-gray-50 w-[400px] h-full overflow-y-scroll lg:overflow-hidden">
-				<div className="p-6 lg:p-10">
+			<div className="lg:flex-2 bg-gray-50 w-full lg:w-[400px] lg:overflow-hidden">
+				<div className="p-4 md:p-6 lg:p-10">
 					<p className="text-xl font-bold mb-4">General</p>
 					<div className="space-y-6 mb-6">
 						<div className="flex items-center space-x-4">
@@ -156,7 +154,7 @@ function SinglePage() {
 						</div>
 					</div>
 					<p className="text-xl font-bold mb-4">Sizes</p>
-					<div className="flex  gap-2 mb-6 justify-between">
+					<div className="flex gap-2 mb-6 justify-between">
 						<div className="flex flex-col items-center bg-white p-2 rounded-md shadow">
 							<BuildingIcon />
 							<span>{post.postDetail.size} sqft</span>
@@ -171,22 +169,22 @@ function SinglePage() {
 						</div>
 					</div>
 					<p className="text-xl font-bold mb-4">Nearby Places</p>
-					<div className="flex mb-6 justify-between">
-						<div className="flex flex-col items-center space-x-4">
+					<div className="flex flex-col space-y-6 mb-6">
+						<div className="flex items-center space-x-4">
 							<School />
 							<div>
 								<div className="font-semibold">School</div>
 								<p className="text-gray-500">{post.postDetail.school}m away</p>
 							</div>
 						</div>
-						<div className="flex flex-col items-center space-x-4">
+						<div className="flex items-center space-x-4">
 							<Bus />
 							<div>
 								<div className="font-semibold">Bus Stop</div>
 								<p className="text-gray-500">{post.postDetail.bus}m away</p>
 							</div>
 						</div>
-						<div className="flex flex-col items-center space-x-4">
+						<div className="flex items-center space-x-4">
 							<Hotel />
 							<div>
 								<div className="font-semibold">Restaurant</div>

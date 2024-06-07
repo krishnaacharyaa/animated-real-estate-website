@@ -1,14 +1,14 @@
-// import './listPage.scss';
-// import Filter from '../../components/filter/Filter';
-// import Card from '../../components/card/Card';
-// import Map from '../../components/map/Map';
 import postsData from './postsData.json'; // Assuming you've saved the JSON in a file called posts.json
 import { Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
 import Card from './components/list-page/Card';
 import { Filter } from './components/list-page/filter-section';
 import Map from './components/list-page/map/Map';
-import { BuildingIcon, HamburgerIcon } from '@/icons/landing-page-icons';
+import {
+	BuildingIcon,
+	HamburgerIcon,
+	FilterIcon,
+} from '@/icons/landing-page-icons'; // Assuming you have a filter icon
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -28,18 +28,19 @@ const cardVariants = {
 };
 
 function ListPage() {
-	// Use the imported postsData instead of fetching data
 	const data = { postResponse: { data: postsData } };
 	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	const links = [
 		{ text: 'Buy or Rent', href: '/buy-rent' },
 		{ text: 'Sell or List', href: '/sell-list' },
 		{ text: 'Home Value', href: '/home-value' },
 		{ text: 'Franchise', href: '/franchise' },
 	];
+
 	return (
 		<div>
-			<nav className=" px-32 py-4 flex justify-between items-center">
+			<nav className="px-4 md:px-32 py-4 flex justify-between items-center">
 				<Link to={'/'}>
 					<div className="flex items-center cursor-pointer">
 						<BuildingIcon className="text-primary h-8 w-8" />
@@ -51,7 +52,10 @@ function ListPage() {
 						</span>
 					</div>
 				</Link>
-				<div className="md:hidden">
+				<div className="md:hidden flex gap-4 items-center">
+					<button onClick={() => setIsFilterOpen(!isFilterOpen)}>
+						<FilterIcon className="h-6 w-6 text-gray-800 mr-8" />
+					</button>
 					<button onClick={() => setIsNavOpen(!isNavOpen)}>
 						<HamburgerIcon className="h-6 w-6 text-gray-800" />
 					</button>
@@ -78,10 +82,12 @@ function ListPage() {
 					</Button>
 				</div>
 			</nav>
-			<div className=" flex flex-col lg:flex-row px-32">
-				<div className="flex-1 px-4 ">
+			<div className="flex flex-col lg:flex-row px-4 md:px-32">
+				<div className="flex-1 px-4">
 					<div className="max-w-screen-lg mx-auto">
-						<Filter />
+						<div className={`${isFilterOpen ? 'block' : 'hidden'} md:block`}>
+							<Filter />
+						</div>
 						<Suspense fallback={<p>Loading...</p>}>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
 								{data.postResponse.data.map(post => (
@@ -91,7 +97,7 @@ function ListPage() {
 						</Suspense>
 					</div>
 				</div>
-				<div className="w-full lg:w-1/3 h-screen lg:sticky top-0">
+				<div className="w-full lg:w-1/3 h-screen lg:sticky top-0 mt-6 lg:mt-0">
 					<Suspense fallback={<p>Loading...</p>}>
 						<Map items={data.postResponse.data} />
 					</Suspense>

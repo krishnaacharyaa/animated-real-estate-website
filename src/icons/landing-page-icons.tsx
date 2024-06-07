@@ -180,7 +180,31 @@ export function X() {
 		</svg>
 	);
 }
-
+export function FilterIcon() {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			version="1.1"
+			width="24"
+			height="24"
+			x="0"
+			y="0"
+			viewBox="0 0 24 24"
+			xmlSpace="preserve"
+			className=""
+		>
+			<g>
+				<path
+					d="M17 5a3 3 0 1 1 3 3 3 3 0 0 1-3-3zM2 6h12a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2zm6 3a3 3 0 0 0-2.82 2H2a1 1 0 0 0 0 2h3.18A3 3 0 1 0 8 9zm14 2h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm-12 7H2a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zm12 0h-3.18a3 3 0 1 0 0 2H22a1 1 0 0 0 0-2z"
+					fill="#000000"
+					opacity="1"
+					data-original="#000000"
+					className=""
+				></path>
+			</g>
+		</svg>
+	);
+}
 export function HamburgerIcon() {
 	return (
 		<svg
