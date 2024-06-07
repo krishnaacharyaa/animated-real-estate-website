@@ -28,6 +28,7 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 function SinglePage() {
 	const post = {
 		title: 'Luxury Apartment in Historic Building',
@@ -63,6 +64,9 @@ function SinglePage() {
 		<div className="flex flex-col justify-between mx-32 lg:flex-row h-screen ">
 			<div className="lg:flex-3 h-full overflow-y-scroll lg:overflow-hidden">
 				<div className="p-6 lg:p-10">
+					<Link to="/listings">
+						<div className="underline text-primary mb-4">Go back</div>
+					</Link>
 					<Slider images={post.images} />
 					<div className="mt-8">
 						<div className="flex flex-col lg:flex-row justify-between mb-6">
