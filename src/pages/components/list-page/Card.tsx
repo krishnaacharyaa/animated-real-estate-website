@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Card({ item }) {
 	return (
-		<Link to={'/details'}>
+		<Link to={`/details/${item.id}`}>
 			<div className="bg-white drop-shadow-md rounded-lg overflow-hidden">
 				<img
 					src={item.images[0]}

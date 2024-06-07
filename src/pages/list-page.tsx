@@ -89,11 +89,18 @@ function ListPage() {
 							<Filter />
 						</div>
 						<Suspense fallback={<p>Loading...</p>}>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+							<motion.div
+								initial="hidden"
+								animate="visible"
+								variants={containerVariants}
+								className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"
+							>
 								{data.postResponse.data.map(post => (
-									<Card key={post.id} item={post} />
+									<motion.div key={post.id} variants={cardVariants}>
+										<Card item={post} />
+									</motion.div>
 								))}
-							</div>
+							</motion.div>
 						</Suspense>
 					</div>
 				</div>

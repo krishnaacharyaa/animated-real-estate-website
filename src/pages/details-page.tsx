@@ -1,4 +1,5 @@
 import {
+	Back,
 	Bath,
 	Bed,
 	BuildingIcon,
@@ -25,59 +26,73 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import posts from './postsData.json';
+
+const fadeIn = {
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const staggerContainer = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.3,
+		},
+	},
+};
 
 function SinglePage() {
-	const post = {
-		title: 'Luxury Apartment in Historic Building',
-		price: '2,750,000.00',
-		images: [
-			'https://framerusercontent.com/images/IMwFvXYelS9htxWGoaWzgBtH2SU.webp',
-			'https://framerusercontent.com/images/nVpXLvCjUikE6dq1mgsikOWnRtQ.webp?scale-down-to=512',
-			'https://framerusercontent.com/images/dQGaJxVEUqHYp0sg3vXQz7jgRug.webp?scale-down-to=512',
-			'https://framerusercontent.com/images/UZXntS0Ye2wlFo9Rc4yrMjO1I0.webp?scale-down-to=512',
-		],
-		address: '202 Walnut St',
-		city: 'Boston',
-		bedroom: 2,
-		bathroom: 2,
-		latitude: '42.3601',
-		longitude: '-71.0589',
-		type: 'rent',
-		property: 'apartment',
-		postDetail: {
-			desc: 'Elegant apartment located within a historic building in the heart of Boston. Enjoy modern amenities while embracing the charm of the past.',
-			utilities: 'Included',
-			pet: 'Allowed with restrictions',
-			income: 'Verification required',
-			size: 1500,
-			school: 8,
-			bus: 5,
-			restaurant: 15,
-		},
-	};
+	const { id } = useParams();
+	const post = posts.find(e => e.id.toString() === id);
 	const [date, setDate] = useState<Date>();
 
 	return (
 		<div className="flex flex-col lg:flex-row h-screen">
-			<div className="lg:flex-3 lg:overflow-hidden">
+			<motion.div
+				className="lg:flex-3 lg:overflow-hidden"
+				initial="hidden"
+				animate="visible"
+				variants={staggerContainer}
+			>
 				<div className="p-4 md:p-6 lg:p-10">
 					<Link to="/listings">
-						<div className="underline text-primary mb-4">Go back</div>
+						<motion.div
+							className="underline flex items-center  gap-2 text-primary mb-4"
+							variants={fadeIn}
+						>
+							<Back />
+							Go back
+						</motion.div>
 					</Link>
-					<Slider images={post.images} />
-					<div className="mt-8">
+					<motion.div variants={fadeIn}>
+						<Slider images={post.images} />
+					</motion.div>
+					<motion.div className="mt-8" variants={fadeIn}>
 						<div className="flex flex-col lg:flex-row justify-between mb-6">
 							<div className="mb-4 lg:mb-0">
-								<h1 className="text-2xl font-semibold">{post.title}</h1>
-								<div className="flex items-center text-gray-500 mt-2">
+								<motion.h1 className="text-2xl font-semibold" variants={fadeIn}>
+									{post.title}
+								</motion.h1>
+								<motion.div
+									className="flex items-center text-gray-500 mt-2"
+									variants={fadeIn}
+								>
 									<Pin />
 									<span>{post.address}</span>
-								</div>
-								<div className="mt-4 py-2 rounded-md text-lg">
+								</motion.div>
+								<motion.div
+									className="mt-4 py-2 rounded-md text-lg"
+									variants={fadeIn}
+								>
 									{post.postDetail.desc}
-								</div>
-								<div className="drop-shadow-sm rounded-lg bg-bgColor p-4">
+								</motion.div>
+								<motion.div
+									className="drop-shadow-sm rounded-lg bg-bgColor p-4"
+									variants={fadeIn}
+								>
 									<div className="flex flex-col">
 										<div className="mb-2">Available for sale</div>
 										<h1 className="text-4xl">$ {post.price}</h1>
@@ -121,16 +136,21 @@ function SinglePage() {
 										</div>
 									</div>
 									<Button className="mt-4 text-white">Request a tour</Button>
-								</div>
+								</motion.div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
-			</div>
-			<div className="lg:flex-2 bg-gray-50 w-full lg:w-[400px] lg:overflow-hidden">
+			</motion.div>
+			<motion.div
+				className="lg:flex-2 bg-gray-50 w-full lg:w-[400px] lg:overflow-hidden"
+				initial="hidden"
+				animate="visible"
+				variants={staggerContainer}
+			>
 				<div className="p-4 md:p-6 lg:p-10">
 					<p className="text-xl font-bold mb-4">General</p>
-					<div className="space-y-6 mb-6">
+					<motion.div variants={fadeIn} className="space-y-6 mb-6">
 						<div className="flex items-center space-x-4">
 							<Utility />
 							<div>
@@ -152,9 +172,12 @@ function SinglePage() {
 								<p className="text-gray-500">{post.postDetail.income}</p>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 					<p className="text-xl font-bold mb-4">Sizes</p>
-					<div className="flex gap-2 mb-6 justify-between">
+					<motion.div
+						variants={fadeIn}
+						className="flex gap-2 mb-6 justify-between"
+					>
 						<div className="flex flex-col items-center bg-white p-2 rounded-md shadow">
 							<BuildingIcon />
 							<span>{post.postDetail.size} sqft</span>
@@ -167,9 +190,12 @@ function SinglePage() {
 							<Bed />
 							<span>{post.bathroom} bathrooms</span>
 						</div>
-					</div>
+					</motion.div>
 					<p className="text-xl font-bold mb-4">Nearby Places</p>
-					<div className="flex flex-col space-y-6 mb-6">
+					<motion.div
+						variants={fadeIn}
+						className="flex flex-col space-y-6 mb-6"
+					>
 						<div className="flex items-center space-x-4">
 							<School />
 							<div>
@@ -193,13 +219,13 @@ function SinglePage() {
 								</p>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 					<p className="text-xl font-bold mb-4">Location</p>
-					<div className="w-full h-56 mb-6">
+					<motion.div className="w-full h-56 mb-6" variants={fadeIn}>
 						<Map items={[post]} />
-					</div>
+					</motion.div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 }

@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 		element: <ListPage />,
 	},
 	{
-		path: '/details',
+		path: '/details/:id',
 		element: <SinglePage />,
 	},
 ]);
