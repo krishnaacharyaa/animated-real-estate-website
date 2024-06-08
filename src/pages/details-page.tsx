@@ -52,7 +52,7 @@ function SinglePage() {
 	return (
 		<div className="flex flex-col lg:flex-row h-screen">
 			<motion.div
-				className="lg:flex-3 lg:overflow-hidden"
+				className="lg:flex-3 "
 				initial="hidden"
 				animate="visible"
 				variants={staggerContainer}
@@ -143,7 +143,7 @@ function SinglePage() {
 				</div>
 			</motion.div>
 			<motion.div
-				className="lg:flex-2 bg-gray-50 w-full lg:w-[400px] lg:overflow-hidden"
+				className="lg:flex-2 bg-gray-50 w-full lg:w-[400px] "
 				initial="hidden"
 				animate="visible"
 				variants={staggerContainer}
