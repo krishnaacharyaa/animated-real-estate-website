@@ -9,6 +9,7 @@ import {
 	MicroscopeIcon,
 	HamburgerIcon, // Assuming you have a HamburgerIcon component
 } from '@/icons/landing-page-icons';
+import gifimg from './hello.gif';
 import { useState } from 'react';
 import { CountUpCard } from './components/countup-card';
 import FeaturesSection from './sections/features';
@@ -148,10 +149,14 @@ export default function App() {
 						variants={rightItemVariants}
 					>
 						<img
-							src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600"
-							alt="Property"
-							className="rounded-lg shadow-lg max-w-full"
-						/>
+							// src="https://giphy.com/embed/ZCkD0qVCXkWXtiBGUT"
+							src={gifimg}
+							// width="480"
+							// height="360"
+							// frameBorder="0"
+							className="rounded-lg shadow-lg w-full  object-cover bg-cover"
+							// allowFullScreen
+						></img>
 					</motion.div>
 				</motion.div>
 			</div>
