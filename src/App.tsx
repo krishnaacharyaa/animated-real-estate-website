@@ -161,10 +161,10 @@ export default function App() {
 				</motion.div>
 			</div>
 			<div className="flex mt-6 flex-col gap-6 w-full">
-				<CaculatePriceSection />
-				<FeaturesSection />
-				<SellHomeSection />
 				<PropertiesList />
+				<FeaturesSection />
+				<CaculatePriceSection />
+				<SellHomeSection />
 				<TestimonialSection />
 				<Footer />
 			</div>
